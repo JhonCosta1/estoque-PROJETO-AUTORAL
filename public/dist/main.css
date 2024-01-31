@@ -1,5 +1,51 @@
-div {
-  border: 1px solid red;
+body {
+  margin: 0;
+  padding: 0;
+  font: 16px "Roboto";
+  display: flex;
+  flex-direction: row;
+}
+
+li {
+  list-style-type: none;
+}
+
+main {
+  display: flex;
+  flex-grow: 1;
+  padding: 10px;
+  background-color: 1px solid red;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.li-menu {
+  cursor: pointer;
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+}
+
+.icone-menu {
+  padding-right: 8px;
+}
+
+#menu-geral {
+  border-top: 2px solid blue;
+  border-right: 2px solid blue;
+  border-bottom: 2px solid blue;
+  width: 15%;
+  height: 100vh;
+  background: linear-gradient(90deg, #bebbcd 100%, rgb(0, 36, 30) 100%);
+}
+
+.li-menu:hover {
+  color: blue;
 }
 
 /*# sourceMappingURL=main.css.map */
