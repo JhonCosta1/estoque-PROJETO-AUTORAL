@@ -22,7 +22,25 @@ ul {
   padding: 0px;
 }
 
-.li-menu {
+#menu-geral {
+  border-top: 2px solid blue;
+  border-right: 2px solid blue;
+  border-bottom: 2px solid blue;
+  width: 15%;
+  height: 100vh;
+  background: linear-gradient(90deg, #bebbcd 100%, rgb(0, 36, 30) 100%);
+  position: static;
+}
+
+.btn-menu:hover {
+  color: blue;
+}
+
+#btn-adicionar:hover {
+  background-color: #7837a6;
+}
+
+.btn-menu {
   cursor: pointer;
   background-color: white;
   margin: 10px;
@@ -35,17 +53,45 @@ ul {
   padding-right: 8px;
 }
 
-#menu-geral {
-  border-top: 2px solid blue;
-  border-right: 2px solid blue;
-  border-bottom: 2px solid blue;
-  width: 15%;
-  height: 100vh;
-  background: linear-gradient(90deg, #bebbcd 100%, rgb(0, 36, 30) 100%);
+#btn-adicionar {
+  border: none;
+  background: blue;
+  color: white;
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 5px;
 }
 
-.li-menu:hover {
-  color: blue;
+.geral-form {
+  display: flex;
+  justify-content: left;
+  flex-direction: row;
+}
+
+.secao-form {
+  padding: 18px;
+  height: 59%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.15);
+  border-radius: 7px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+#descricao {
+  resize: none;
+}
+
+input, textarea, select {
+  border-radius: 5px;
+  border: 1px solid blue;
+  outline: none;
+}
+
+input:focus, textarea:focus, select:focus {
+  border: 3px solid #1c0767;
 }
 
 /*# sourceMappingURL=main.css.map */
