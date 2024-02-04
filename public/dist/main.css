@@ -89,7 +89,7 @@ tr:hover td {
 
 .secao-form {
   padding: 18px;
-  height: 44%;
+  height: 49%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.15);
   border-radius: 7px;
 }
@@ -111,6 +111,13 @@ input, textarea, select {
 
 input:focus, textarea:focus, select:focus {
   border: 3px solid #1c0767;
+}
+
+.h4-modalcampos {
+  background-color: orange;
+  padding: 2px;
+  text-align: center;
+  border-radius: 5px;
 }
 
 .secao-lista {
