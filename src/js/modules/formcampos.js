@@ -1,11 +1,13 @@
-export class Formadicionar{
+import { Recuperarlista } from '../modules/recuperarlista.js'
+export class Formadicionar extends Recuperarlista{
     constructor(){
+        super()
         this.configurarListeners()
-        this.listaPreVisualizacao = JSON.parse(localStorage.getItem('previsualizacao')) || []
+        this.criarLista()
     }
 
     previsualizacaoLocalStorage(){
-        localStorage.setItem('previsualizacao', JSON.stringify(this.listaPreVisualizacao));
+        localStorage.setItem('previsualizacao', JSON.stringify(this.recuperarProdutos))
     }
 
     validarCampos(){
@@ -18,7 +20,6 @@ export class Formadicionar{
         )
     }
 
-
     adicionarProdutos(){
         const produto = {
             nome: this.nomeProduto,
@@ -27,27 +28,39 @@ export class Formadicionar{
             quantidade: this.quantidade,
             grupo: this.grupo,
         }
-        this.listaPreVisualizacao.push(produto)
+        this.recuperarProdutos.push(produto)
+        this.criarLista()
         this.previsualizacaoLocalStorage()
-        this.div.remove()
+        if(this.div){
+            this.div.remove()
+        }
+        this.limparCampos()
+        this.exibirPreencherTodos("Produto enviado para lista")
     }
 
 
-    exibirPreencherTodos() {
+    exibirPreencherTodos(msg) {
         this.seletormodal = document.querySelector(".h4-modalcampos")
         if(!this.seletormodal){
             this.div = document.createElement("h4")
-            this.div.textContent = "Preencha todos os campos!"
+            this.div.textContent = msg
             this.div.classList.add("h4-modalcampos")
             this.h1Titulo.parentNode.insertBefore(this.div, this.h1Titulo.nextSibling)
         }
+    }
+
+    limparCampos(){
+        this.nomeProduto = document.querySelector("#nome-produto").value = ""
+        this.validade = document.querySelector("#validade").value = ""
+        this.fabricante = document.querySelector("#fabricante").value = ""
+        this.quantidade = document.querySelector("#quantidade").value = ""
+        this.grupo = document.querySelector("#grupo-produto").value = ""
     }
 
     configurarListeners() {
         this.btnAdc = document.querySelector("#btn-adc")
         this.btnAdc.addEventListener("click", (e) => {
             e.preventDefault()
-
             this.nomeProduto = document.querySelector("#nome-produto").value.trim()
             this.validade = document.querySelector("#validade").value.trim()
             this.fabricante = document.querySelector("#fabricante").value.trim()
@@ -58,8 +71,10 @@ export class Formadicionar{
             if (this.validarCampos()) {
                 this.adicionarProdutos()
             } else {
-                this.exibirPreencherTodos()
+                this.exibirPreencherTodos("Preencha todos os campos!")
             }
         })
     }
 }
+
+

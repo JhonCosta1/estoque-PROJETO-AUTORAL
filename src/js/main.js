@@ -1,3 +1,6 @@
+
+//import { Recuperarlista } from './modules/recuperarlista.js'
 import { Formadicionar } from './modules/formcampos.js'
 
-const camposForms = new Formadicionar()
+//const recuperarLista = new Recuperarlista()
+const formadicionar = new Formadicionar()
