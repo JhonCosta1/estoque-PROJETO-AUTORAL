@@ -1,14 +1,16 @@
-export class Recuperarlista{
+export class Listaconsulta{
     constructor(){
-        this.recuperarProdutos = JSON.parse(localStorage.getItem("previsualizacao")) || []
-        this.criarLista()
+        this.recuperarFinal = JSON.parse(localStorage.getItem("listaFinal")) || []
+        this.listaFinalGerar()
+    }
+    
+    testeG(){
+        localStorage.setItem('listaFinal', JSON.stringify(this.recuperarFinal))
     }
 
-
-    criarLista(){
-        this.geralProdutos = document.querySelector("#geral-produtos");
-        this.geralProdutos.innerHTML = "";
-        for(const produto of this.recuperarProdutos){
+    listaFinalGerar(){
+        this.geralProdutosFinal = document.querySelector("#lista-consulta");
+        for(const produto of this.recuperarFinal){
         this.tr = document.createElement("tr");
         this.td1 = document.createElement("td");
         this.td1.textContent = produto.nome;
@@ -25,8 +27,9 @@ export class Recuperarlista{
         this.tr.appendChild(this.td3);
         this.tr.appendChild(this.td4);
         this.tr.appendChild(this.td5);
-        this.geralProdutos.appendChild(this.tr);
+        this.geralProdutosFinal.appendChild(this.tr);
         }
     }
-
 }
+
+//const listagem = new Listaconsulta()

@@ -38,7 +38,6 @@ export class Formadicionar extends Recuperarlista{
         this.exibirPreencherTodos("Produto enviado para lista")
     }
 
-
     exibirPreencherTodos(msg) {
         this.seletormodal = document.querySelector(".h4-modalcampos")
         if(!this.seletormodal){
@@ -67,7 +66,6 @@ export class Formadicionar extends Recuperarlista{
             this.quantidade = document.querySelector("#quantidade").value.trim()
             this.grupo = document.querySelector("#grupo-produto").value.trim()
             this.h1Titulo = document.querySelector(".h1-cadastroproduto")
-
             if (this.validarCampos()) {
                 this.adicionarProdutos()
             } else {
